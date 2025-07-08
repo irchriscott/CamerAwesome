@@ -90,6 +90,10 @@ class PhotoCameraState extends CameraState {
 
         _mediaCapture = MediaCapture.success(captureRequest: captureRequest);
         onPhoto?.call(captureRequest);
+
+        await Future.delayed(const Duration(seconds: 2));
+        // Delay to allow the UI to update before the next action
+        _mediaCapture = MediaCapture.idle(captureRequest: captureRequest);
       } else {
         _mediaCapture = MediaCapture.failure(captureRequest: captureRequest);
         onPhotoFailed?.call(Exception("Failed to take photo"));
@@ -133,6 +137,14 @@ class PhotoCameraState extends CameraState {
     cameraContext.focus();
   }
 
+<<<<<<< HEAD
+=======
+  @override
+  reset() {
+    cameraContext.changeState(captureMode.toCameraState(cameraContext));
+  }
+
+>>>>>>> 6f497f57f1428210c2cf006757b34f4cffa7b0e6
   Future<void> focusOnPoint({
     required Offset flutterPosition,
     required PreviewSize pixelPreviewSize,

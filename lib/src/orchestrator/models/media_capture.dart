@@ -5,6 +5,10 @@ enum MediaCaptureStatus {
   capturing,
   success,
   failure,
+<<<<<<< HEAD
+=======
+  idle
+>>>>>>> 6f497f57f1428210c2cf006757b34f4cffa7b0e6
 }
 
 enum VideoState {
@@ -38,6 +42,12 @@ class MediaCapture {
     required this.captureRequest,
   })  : status = MediaCaptureStatus.failure,
         videoState = VideoState.error;
+
+  MediaCapture.idle({
+    this.exception,
+    required this.captureRequest,
+  })  : status = MediaCaptureStatus.idle,
+        videoState = null;
 
   /// Returns true if the capture has either a mimeType with "image" inside or
   /// if the file path ends with "jpg".

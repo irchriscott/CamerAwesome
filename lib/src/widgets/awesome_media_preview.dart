@@ -124,6 +124,11 @@ class AwesomeMediaPreview extends StatelessWidget {
           Icons.error,
           color: Colors.white,
         );
+      case MediaCaptureStatus.idle:
+        return const SizedBox(
+          width: 32,
+          height: 32,
+        );
       case null:
         return const SizedBox(
           width: 32,
