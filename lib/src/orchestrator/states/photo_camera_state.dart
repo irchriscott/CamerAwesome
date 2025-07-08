@@ -137,14 +137,11 @@ class PhotoCameraState extends CameraState {
     cameraContext.focus();
   }
 
-<<<<<<< HEAD
-=======
   @override
   reset() {
     cameraContext.changeState(captureMode.toCameraState(cameraContext));
   }
 
->>>>>>> 6f497f57f1428210c2cf006757b34f4cffa7b0e6
   Future<void> focusOnPoint({
     required Offset flutterPosition,
     required PreviewSize pixelPreviewSize,
