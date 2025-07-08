@@ -5,10 +5,7 @@ enum MediaCaptureStatus {
   capturing,
   success,
   failure,
-<<<<<<< HEAD
-=======
   idle
->>>>>>> 6f497f57f1428210c2cf006757b34f4cffa7b0e6
 }
 
 enum VideoState {
